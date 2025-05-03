@@ -2,7 +2,8 @@
 <package format="2">
   <name>hmi_multimap</name>
   <version>0.0.0</version>
-  <description>The hmi_multimap package</description>
+  <description> A package that contains various nodes and script that provide a human interface to
+    use the stack and test the nodes. </description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
