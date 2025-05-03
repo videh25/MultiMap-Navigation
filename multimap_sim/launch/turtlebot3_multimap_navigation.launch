@@ -1,0 +1,4 @@
+<launch>
+ <include file="$(find multimap_sim)/launch/turtlebot3_multimap.launch"/>
+ <include file="$(find multimap_sim)/launch/turtlebot3_navigation.launch"/>
+</launch>

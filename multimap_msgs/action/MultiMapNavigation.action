@@ -1,0 +1,10 @@
+#goal         
+std_msgs/Header header
+string map_id
+geometry_msgs/PoseStamped pose
+---
+#result
+bool data
+---
+#feedback
+string current_action

@@ -1,0 +1,7 @@
+<launch>
+
+    <rosparam command="load" file="$(find multimap_nav_server)/config/params.yaml"/>
+    <!-- <node name="multimap_navigation_server" type="multimap_nav_server" pkg="multimap_nav_server"/> -->
+    <node name="multimap_navigation_server" type="multimap_nav_server" pkg="multimap_nav_server" launch-prefix="xterm -e gdb --args"/>
+
+</launch>

@@ -1,0 +1,24 @@
+<root main_tree_to_execute = "MainTree" >
+     <BehaviorTree ID="MainTree">
+        <Sequence name="root_sequence">
+            <Fallback name="on_same_map_fallback">
+                <CheckOnSameMap name="check_on_same_map" goal_map_id="{goal_map_id}" current_map_id="{current_map_id}"/>
+                <Sequence name="make_robot_get_on_same_map">
+                    <QueryLocalPortal name="get_local_portal_pose" current_map_portal_pose="{current_map_portal_pose}" current_map_id="{current_map_id}"/>
+                    <Fallback name="near_portal_fallback">
+                        <CheckNearPortal name="check_if_near_the_portal" node_handle="{node_handle}" current_map_portal_pose="{current_map_portal_pose}"/>
+                        <Sequence name="make_robot_get_to_portal">
+                            <SetMbGoalTo name="set_goal_to_local_portal" goal_pose="{current_map_portal_pose}" mb_goal="{mb_goal}"/>
+                            <SendGoalToMoveBase name="send_robot_to_portal" mb_goal="{mb_goal}"/>
+                        </Sequence>
+                    </Fallback>
+                    <RequestTeleportation name="request_teleportation" node_handle="{node_handle}" goal_map_id="{goal_map_id}" current_map_id="{current_map_id}"/>
+                </Sequence>
+            </Fallback>
+            <Sequence name="get_robot_to_the_final_goal">
+                <SetMbGoalTo name="set_goal_to_final_goal" goal_pose="{final_goal_pose}" mb_goal="{mb_goal}"/>
+                <SendGoalToMoveBase name="send_robot_to_final_goal" mb_goal="{mb_goal}"/>
+            </Sequence>
+        </Sequence>
+     </BehaviorTree>
+ </root>

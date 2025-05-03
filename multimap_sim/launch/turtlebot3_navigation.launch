@@ -1,0 +1,7 @@
+<launch>
+ <arg name="map_id" default="room1" doc="Multimap map id to launch"/>
+ <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch">
+   <arg name="map_file" default="$(env MULTIMAP_STORAGE_PATH)/$(arg map_id).yaml"/>
+   <arg name="open_rviz" default="true"/>
+ </include>
+</launch>

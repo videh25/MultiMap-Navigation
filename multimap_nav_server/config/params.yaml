@@ -1,0 +1,5 @@
+nav_action_name: /move_base
+start_map_id: room1
+teleportation_service: /teleport
+pose_topic: /amcl_pose
+database_path: /home/videh/Documents/multimap_storage/wormholes.db
