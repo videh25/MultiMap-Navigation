@@ -1,11 +1,12 @@
 #ifndef ___MOVE_BASE_CLIENT_BEHAVIOR_TREE_NODE___
 #define ___MOVE_BASE_CLIENT_BEHAVIOR_TREE_NODE___
 
+#include "actionlib/client/simple_action_client.h"
+#include "actionlib/client/terminal_state.h"
 #include "behaviortree_cpp_v3/action_node.h"
-#include "multimap_msgs/action/multi_map_navigation.hpp"
-#include "nav2_msgs/action/navigate_to_pose.hpp"
-#include "rclcpp/rclcpp.hpp"
-#include "rclcpp_action/rclcpp_action.hpp"
+#include "move_base_msgs/MoveBaseAction.h"
+#include "multimap_msgs/MultiMapNavigationFeedback.h"
+#include "ros/ros.h"
 
 namespace multimap_nav {
 
@@ -25,7 +26,7 @@ public:
     return instance;
   };
 
-  void SendGoal(const nav2_msgs::action::NavigateToPose &goal);
+  void SendGoal(const move_base_msgs::MoveBaseGoal &goal);
   actionlib::SimpleClientGoalState GetClientState();
   void CancelGoal();
 
